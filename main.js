@@ -1,14 +1,16 @@
-let newUser = {
-  _firstName:"",
-  _lastName:"",
+function createUser(){
+   let newUser = {
+    _firstName:prompt("f"),
+    _lastName:prompt("l"),
+   getLogin: function(){
+     return console.log(this._firstName[0] + this._lastName)
+     }
+    }
+    return newUser;
+   };
 
-  getLogin: function(fName, lName){
-    let sumString = fName[0] + lName;
-    alert(sumString);
-  }
-}
-
-Object.defineProperty(newUser, 'firstName',{
+   let u= createUser();
+Object.defineProperty(u, 'firstName',{
   get(){
     return this._firstName;
   },
@@ -17,7 +19,7 @@ Object.defineProperty(newUser, 'firstName',{
   }
 });
 
-Object.defineProperty(newUser, 'lastName',{
+Object.defineProperty(u, 'lastName',{
   get(){
     return this._lastName;
   },
@@ -26,12 +28,12 @@ Object.defineProperty(newUser, 'lastName',{
   }
 });
 
-function createNewUser(){
-  let fName = prompt("f");
-  let lName = prompt("l");
-  newUser.getLogin(fName, lName);
+  u.getLogin();
 
-  return newUser;
-}
+// function createNewUser(){
+//   let fName = prompt("f");
+//   let lName = prompt("l");
+//   newUser.getLogin(fName, lName);
 
-createNewUser();
+//   return newUser;
+// }
